@@ -8,16 +8,24 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/40572f020a.js" crossorigin="anonymous"></script>
     <title>Ashur Yousif</title>
+    <script src="index.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("K3J0jofreIepFASRF");
+        })();
+    </script>
 </head>
 
 <body>
-    <section id="landing-page">
+    <section id="landing-page" onmousemove="moveBackground(event)">
         <nav>
             <figure>
                 <img id="personal-logo" src="./assets/LOGO.png" alt="">
             </figure>
             <ul class="nav__link--list">
-                <li class="nav__link">
+                <li class="nav__link" onclick="toggleModal()">
                     <a href="#" class="
                     nav__link--anchor
                     link__hover-effect
@@ -25,7 +33,7 @@
                     ">About</a>
                 </li>
                 <li class="nav__link">
-                    <a href="#" class="
+                    <a href="#projects" class="
                     nav__link--anchor
                     link__hover-effect
                     link__hover-effect--black
@@ -36,9 +44,9 @@
                     nav__link--anchor
                     link__hover-effect
                     link__hover-effect--black
-                    ">Contact</a>
+                    " onclick="toggleModal()">Contact</a>
                 </li>
-                <li class="nav__link click">
+                <li class="nav__link click" onclick="toggleContrast()">
                     <i class="fa-solid fa-circle-half-stroke"></i>
                 </li>
             </ul>
@@ -53,74 +61,124 @@
                     applications with amazing user interfaces using a wide range of technology stacks and best
                     practices.
                     <br>
-                    More <a href="" class="cyan">about me</a>
+                    More <b href="" class="cyan click" onclick="toggleModal()">about me</b>
                 </p>
                 <div class="social__list">
-                    <a href="" target="_blank" class="social__link click">
+                    <a href="https://github.com/AshurYousif" target="_blank" class="social__link click" target="_blank" >
                         <i class="fa-brands fa-github"></i>
                     </a>
-                    <a href="" target="_blank" class="social__link click">
+                    <a href="" target="_blank" class="social__link click" target="_blank" >
                         <i class="fa-brands fa-linkedin"></i>
                     </a>
-                    <a href="" target="_blank" class="social__link click">
+                    <a href="" target="_blank" class="social__link click" target="_blank" >
                         <i class="fa-solid fa-file-pdf"></i>
                     </a>
                 </div>
             </div>
         </header>
-        <button class="mail__button click">
-            <i class="fa-solid fa-envelope"></i>
-        </button>
+        <a href="#">
+            <button class="mail__button click" onclick="toggleModal()">
+                <i class="fa-solid fa-envelope"></i>
+            </button>
+        </a>
         <a href="#projects" class="scroll">
             <div class="scroll__icon click"></div>
         </a>
         <div class="modal">
             <div class="modal__half modal__about">
-                <h3 class="modal__title modal__title--about">About me</h3>
+                <h3 class="modal__title modal__title--about">About Me</h3>
                 <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer</h4>
-                <p class="modak__para">
-                    I am a 20 year old front software engineer with immense passion, experience and
-                    skills for building responsive, animated, API fetching and functional web
-                    applications with amazing user interfaces using a wide range of technology stacks and best
-                    practices.
+                <p class="modal__para">
+                    I am a 20 year old <span class="cyan">frontend software engineer</span> with immense passion,
+                    experience and
+                    skills for building <span class="cyan">responsive, animated, API fetching and functional</span> web
+                    applications with amazing <span class="cyan">user interfaces </span>using a wide range of technology
+                    stacks and <span class="cyan">best
+                        practices.</span>
                     <br>
                     I possess skills and expereince to develop amazing web pages with difficult aspects and concepts
                     such as
                     animations, functionallity using JS, with amazing user interfaces with consideration to accessible
                     user interfaces for those with disability, API fetching to both display and manipulate data,
-                    responsviness for different
-                    devices, solving complex problems, and utilising version control practices, and all through using web
+                    responsiveness for different
+                    devices, solving complex problems, and utilising version control practices, and all through using
+                    web
                     development best practices.
                 </p>
                 <div class="modal__languages">
                     <figure class="modal__language">
                         <img src="./assets/html5.png" class="modal__languge--image" alt="">
+                        <span class="language__name">HTML</span>
                     </figure>
                     <figure class="modal__language">
                         <img src="./assets/css.png" class="modal__languge--image" alt="">
+                        <span class="language__name">CSS</span>
                     </figure>
                     <figure class="modal__language">
                         <img src="./assets/js.png" class="modal__languge--image" alt="">
+                        <span class="language__name">JavaScript</span>
                     </figure>
                     <figure class="modal__language">
                         <img src="./assets/react.png" class="modal__languge--image" alt="">
+                        <span class="language__name">React</span>
                     </figure>
                     <figure class="modal__language">
                         <img src="./assets/python.png" class="modal__languge--image" alt="">
+                        <span class="language__name">Python</span>
                     </figure>
                     <figure class="modal__language">
                         <img src="./assets/java.png" class="modal__languge--image" alt="">
+                        <span class="language__name">Java</span>
                     </figure>
                     <figure class="modal__language">
                         <img src="./assets/csharp.png" class="modal__languge--image" alt="">
+                        <span class="language__name">C#</span>
                     </figure>
                     <figure class="modal__language">
                         <img src="./assets/cplusplus.png" class="modal__languge--image" alt="">
+                        <span class="language__name">C++</span>
                     </figure>
                 </div>
             </div>
-            <div class="modal__half modal__contact">Have a chat</div>
+            <div class="modal__half modal__contact">
+                <i class="fa-solid fa-x modal__exit click" onclick="toggleModal()"></i>
+                <h3 class="modal__title modal__title--contact">Contact Me</h3>
+                <h4 class="modal__sub-title modal__sub-title--contact">Please, do not hesitate to contact me. I'm always
+                    looking for new opportunities.
+                </h4>
+                <form class="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label class="form__item--label">Name</label>
+                        <input name="user_name" type="text" class="input" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Email</label>
+                        <input name="user_email" type="email" class="input" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Message</label>
+                        <textarea name="message" type="text" class="input" required></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">Send</button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fa-solid fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">Thanks for the message. I will be in touch soon!
+                </div>
+            </div>
         </div>
+        <img src="./assets/semi circle.svg" class="shape shape--0">
+        <img src="./assets/circle.svg" class="shape shape--1">
+        <img src="./assets/squiggly.svg" class="shape shape--2">
+        <img src="./assets/triangle.svg" class="shape shape--3">
+        <img src="./assets/semi circle.svg" class="shape shape--4">
+        <img src="./assets/circle.svg" class="shape shape--5">
+        <img src="./assets/squiggly.svg" class="shape shape--6">
+        <img src="./assets/triangle.svg" class="shape shape--7">
+        <img src="./assets/semi circle.svg" class="shape shape--8">
+
+
     </section>
     <section id="projects">
         <div class="container">
@@ -145,10 +203,10 @@
                                     suscipit.
                                 </p>
                                 <div class="project__description--links">
-                                    <a href="" class="project__description--link">
+                                    <a href="" class="project__description--link" target="_blank" >
                                         <i class="fa-brands fa-github"></i>
                                     </a>
-                                    <a href="" class="project__description--link">
+                                    <a href="" class="project__description--link" target="_blank" >
                                         <i class="fa-solid fa-link"></i>
                                     </a>
                                 </div>
@@ -161,7 +219,7 @@
                             <div class="project__wrapper--bg"></div>
                             <div class="project__description">
                                 <h3 class="project__description--title">
-                                    Test project 1
+                                    Test project 2
                                 </h3>
                                 <h4 class="project__description--sub-title">
                                     Html, CSS, JavaScript
@@ -173,10 +231,10 @@
                                     suscipit.
                                 </p>
                                 <div class="project__description--links">
-                                    <a href="" class="project__description--link">
+                                    <a href="" class="project__description--link" target="_blank" >
                                         <i class="fa-brands fa-github"></i>
                                     </a>
-                                    <a href="" class="project__description--link">
+                                    <a href="" class="project__description--link" target="_blank" >
                                         <i class="fa-solid fa-link"></i>
                                     </a>
                                 </div>
@@ -189,7 +247,7 @@
                             <div class="project__wrapper--bg"></div>
                             <div class="project__description">
                                 <h3 class="project__description--title">
-                                    Test project 1
+                                    Test project 3
                                 </h3>
                                 <h4 class="project__description--sub-title">
                                     Html, CSS, JavaScript
@@ -201,10 +259,10 @@
                                     suscipit.
                                 </p>
                                 <div class="project__description--links">
-                                    <a href="" class="project__description--link">
+                                    <a href="" class="project__description--link" target="_blank" >
                                         <i class="fa-brands fa-github"></i>
                                     </a>
-                                    <a href="" class="project__description--link">
+                                    <a href="" class="project__description--link" target="_blank" >
                                         <i class="fa-solid fa-link"></i>
                                     </a>
                                 </div>
@@ -222,22 +280,22 @@
                     <img src="./assets/LOGO.png" class="footer__logo--img" alt="">
                 </figure>
                 <div class="footer__social--list">
+                    <a href="https://github.com/AshurYousif" class="footer__social--link
+                                link__hover-effect
+                                link__hover-effect--white
+                                " target="_blank" >GitHub</a>
+                    <a href="" class="footer__social--link
+                                link__hover-effect
+                                link__hover-effect--white
+                                " target="_blank">LinkedIn</a>
                     <a href="#" class="footer__social--link
                                 link__hover-effect
                                 link__hover-effect--white
-                                ">GitHub</a>
+                                " onclick="toggleModal()">Contact</a>
                     <a href="#" class="footer__social--link
                                 link__hover-effect
                                 link__hover-effect--white
-                                ">LinkedIn</a>
-                    <a href="#" class="footer__social--link
-                                link__hover-effect
-                                link__hover-effect--white
-                                ">Contact</a>
-                    <a href="#" class="footer__social--link
-                                link__hover-effect
-                                link__hover-effect--white
-                                ">Resume</a>
+                                " target="_blank" >Resume</a>
                 </div>
                 <div class="footer__copyright">Copyright Ⓒ 2022 Ashur Yousif</div>
             </div>
